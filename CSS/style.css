@@ -224,7 +224,7 @@ button:hover{
 
 /*CADA PETALO*/
 .petalos-flor span{
-    positon: absolute;
+    position: absolute;
 
     width: 45px;
     height: 65px;
