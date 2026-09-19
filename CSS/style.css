@@ -1,0 +1,350 @@
+body{
+    margin:0;
+    min-width: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #fff4b8;
+    
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    overflow: hidden;
+}
+
+/*CONTENEDOR PRINCIPAL*/
+.contenedor{
+    width: 90%;
+    max-width: 600px;
+
+    position: relative;
+    z-index: 2;
+}
+
+/*TITULO*/
+h1{
+    margin-bottom: 10px;
+    color: #d89b00;
+    font-size: 55px;
+}
+
+/*SUBTITULO*/
+.subtitulo{
+    margin-bottom: 30px;
+    color: #665500;
+    font-size: 22px;
+}
+
+/*CARTA*/
+.carta{
+    padding: 40px 30px;
+    background: #fffdf0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba0(0, 0, 0, 0.15);
+    border: 3px solid #f5cf45;
+    transition: 0.5s;
+}
+
+/*FLOR*/
+.flor-carta{
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+/*TITULO DE CARTA*/
+.carta h2{
+    color: #d89b00;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+/*TEXTO*/
+.carta p{
+    color: #665500;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+/*FIRMA*/
+.firma{
+    margin-top: 30px;
+    font-style: italic;
+    color: #d89b00 !important;
+}
+
+/*BOTON*/
+button{
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #f5c400;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*EFECTO AL PASAR EL MOUSE*/
+button:hover{
+    background: #dcae00;
+    transform: scale(1.08);
+}
+
+/*CARTA ABIERTO*/
+.carta-abierta{
+    display: none;
+    opacity: 0;
+    transform: scale(0.7);
+}
+
+/*ANIMACION DE APERTURA*/
+.carta-abierta.mostrar{
+    display: block;
+    animation: abrirCarta 1s forwards;
+}
+
+@keyframes abrirCarta{
+    0%{
+        opacity: 0;
+        transform: scale(0.7) rotate(-3deg);
+    }
+
+    60%{
+        opacity: 1;
+        transform: scale(1.05) rotate(2deg);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/*CARTA INICIAL DESAPARECIENDO*/
+.carta.ocultar{
+    animation: cerrarCarta 0.5s forwards;
+}
+
+@keyframes cerrarCarta {
+    from{
+        opacity: 1;
+        transform: scale(1);
+    }
+    to{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
+/*FLORES DECORATIVAS*/
+.flores{
+    position: absolute;
+    width: 100%;
+    font-size: 35px;
+    letter-spacing: 15px;
+    z-index: 1;
+}
+
+/*FLORES DE ARRIBA*/
+.arriba{
+    top: 0.1px;
+}
+
+/*FLORES DE ABAJO*/
+.abajo{
+    bottom: 0.1px;
+}
+
+/*PETALOS*/
+.petalo{
+    position: absolute;
+    top: -50px;
+    font-size: 25px;
+    animation: caer linear forwards;
+    z-index: 1;
+}
+
+@keyframes caer{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/*PARA CELULAR*/
+
+@media (max-width: 600px){
+    h1{
+        font-size: 40px,
+    }
+    .subtitulo{
+        font-size: 18px;
+    }
+    .carta{
+        padding: 30px 20px;
+    }
+    .carta h2{
+        font-size: 25px;
+    }
+    .carta p{
+        font-size: 17px;
+    }
+    .flores{
+        font-size: 25px;
+        letter-spacing: 5px;
+    }
+}
+
+/*FLOR AMARILLA EN LA CARTA*/
+.flor{
+    position: relative;
+
+    width: 150px;
+    height: 190px;
+
+    margin: 0 auto 20px;
+}
+
+/*PETALOS*/
+.petalos-flor{
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: 0;
+    left: 25px;
+}
+
+/*CADA PETALO*/
+.petalos-flor span{
+    positon: absolute;
+
+    width: 45px;
+    height: 65px;
+
+    background: #f5c400;
+
+    border-radius: 50%;
+
+    top: 18px;
+    left: 28px;
+
+    transform-origin: center 32px;
+}
+
+/*POSICION DE LOS PETALOS*/
+
+.petalos-flor span:nth-child(1){
+    transform: rotate(0deg) translateY(-28px);
+}
+
+.petalos-flor span:nth-child(2){
+    transform: rotate(45deg) translateY(-28px);
+}
+
+.petalos-flor span:nth-child(3){
+    transform: rotate(90deg) translateY(-28px);
+}
+
+.petalos-flor span:nth-child(4){
+    transform: rotate(135deg) translateY(-28px);
+}
+
+.petalos-flor span:nth-child(5){
+    transform: rotate(180deg) translateY(-28px);
+}
+
+.petalos-flor span:nth-child(6){
+    transform: rotate(225deg) translateY(-28px);
+}
+
+.petalos-flor span:nth-child(7){
+    transform: rotate(270deg) translateY(-28px);
+}
+
+.petalos-flor span:nth-child(8){
+    transform: rotate(315deg) translateY(-28px);
+}
+
+/*CENTRO DE LA FLOR*/
+.centro-flor{
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    background: #8b5a00;
+    
+    border-radius: 50%;
+
+    top: 23px;
+    left: 48px;
+
+    z-index: 2;
+}
+
+/*TALLO*/
+.tallo{
+    position: absolute;
+
+    width: 10px;
+    height: 100px;
+
+    background: #4f8f32;
+
+    top: 75px;
+    left: 70px;
+
+    border-radius: 10px;
+
+    z-index: -1;
+}
+
+/*HOJAS*/
+.hoja {
+    position: absolute;
+
+    width: 45px;
+    height: 22px;
+
+    background: #5c9e3d;
+    border-radius: 100% 0;
+
+    top: 125px;
+}
+
+/*HOJA IZQUIERDA*/
+.hoja-izquierda{
+    left: 30px;
+    transform: rotate(25deg);
+}
+
+/*HOJA DERECHA*/
+.hoja-derecha{
+    left: 75px;
+    transform: rotate(-25deg) scaleX(-1);
+}
+
+/*ANIMACION PARA LA FLOR*/
+.flor{
+    animation: movimientoFlor 3s ease-in-out infinite;
+}
+
+@keyframes movimientoFlor {
+    0%{
+        transform: rotate(-10deg);
+    }
+    50%{
+        transform: rotate(10deg)
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
